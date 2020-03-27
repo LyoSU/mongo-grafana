@@ -1,0 +1,39 @@
+{
+  "name": "mongo-grafan",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "node_modules/.bin/eslint --ext js .",
+    "lint:fix": "node_modules/.bin/eslint --fix --ext js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LyoSU/vk-music-db-api.git"
+  },
+  "author": "LyoSU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LyoSU/vk-music-db-api/issues"
+  },
+  "homepage": "https://github.com/LyoSU/vk-music-db-api#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "ioredis": "^4.14.1",
+    "koa": "^2.10.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.1",
+    "koa-response-time": "^2.1.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.7.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
