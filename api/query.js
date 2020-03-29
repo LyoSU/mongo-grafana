@@ -19,7 +19,7 @@ module.exports = async (ctx) => {
       const datapoints = stats.map((stat) => {
         return [
           stat[target.target],
-          stat.date.getTime()
+          moment(stat.date).subtract(1, 'hours').valueOf()
         ]
       })
 
