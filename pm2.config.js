@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'LyBotDBApi',
+    name: 'mongoGrafan',
     script: './index.js',
     instances: 'max',
     exec_mode: 'cluster',

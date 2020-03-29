@@ -2,7 +2,7 @@ module.exports = async (ctx) => {
   let query = {}
 
   if (ctx.props.range) {
-    query.createdAt = {
+    query.date = {
       $gte: ctx.props.range.from,
       $lt: ctx.props.range.to
     }
@@ -17,7 +17,7 @@ module.exports = async (ctx) => {
       const datapoints = stats.map((stat) => {
         return [
           stat[target.target],
-          stat.createdAt.getTime()
+          stat.date.getTime()
         ]
       })
 
