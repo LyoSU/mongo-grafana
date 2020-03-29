@@ -1,6 +1,6 @@
 {
   "name": "mongo-grafan",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "koa-logger": "^3.2.1",
     "koa-response-time": "^2.1.0",
     "koa-router": "^7.4.0",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.4"
   },
   "devDependencies": {

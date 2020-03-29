@@ -1,10 +1,12 @@
+const moment = require('moment')
+
 module.exports = async (ctx) => {
   let query = {}
 
   if (ctx.props.range) {
     query.date = {
-      $gte: ctx.props.range.from,
-      $lt: ctx.props.range.to
+      $gte: moment.utc(ctx.props.range.from).add(1, 'hours'),
+      $lte: moment.utc(ctx.props.range.to).add(1, 'hours')
     }
   }
 
