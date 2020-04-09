@@ -5,8 +5,8 @@ module.exports = async (ctx) => {
 
   if (ctx.props.range) {
     query.date = {
-      $gte: moment.utc(ctx.props.range.from).add(1, 'hours'),
-      $lte: moment.utc(ctx.props.range.to).add(1, 'hours')
+      $gte: moment.utc(ctx.props.range.from),
+      $lte: moment.utc(ctx.props.range.to)
     }
   }
 
@@ -19,7 +19,7 @@ module.exports = async (ctx) => {
       const datapoints = stats.map((stat) => {
         return [
           stat[target.target],
-          moment(stat.date).subtract(1, 'hours').valueOf()
+          stat.date
         ]
       })
 
