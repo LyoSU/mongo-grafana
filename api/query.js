@@ -35,7 +35,7 @@ module.exports = async (ctx) => {
           lastDateUnix = 0
         } else {
           if (lastDateUnix === 0) lastDateUnix = stat.date.getTime()
-          lastPoint += stat[target.target]
+          lastPoint = (lastPoint + stat[target.target]) / 2
         }
       })
 
