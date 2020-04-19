@@ -3,8 +3,6 @@ const moment = require('moment')
 module.exports = async (ctx) => {
   let query = {}
 
-  console.log(ctx.props)
-
   if (ctx.props.range) {
     query.date = {
       $gte: moment.utc(ctx.props.range.from),
