@@ -30,12 +30,13 @@ module.exports = async (ctx) => {
             lastPoint,
             lastDateUnix
           ])
-          lastPoint = 0
+          lastPoint = null
           lastDate = date
           lastDateUnix = 0
         } else {
           if (lastDateUnix === 0) lastDateUnix = stat.date.getTime()
-          lastPoint = (lastPoint + stat[target.target]) / 2
+          if (lastPoint) lastPoint = (lastPoint + stat[target.target]) / 2
+          else lastPoint = stat[target.target]
         }
       })
 
