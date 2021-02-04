@@ -18,14 +18,14 @@ module.exports = async (ctx) => {
     dataResult = ctx.props.targets.map((target) => {
       const datapoints = []
 
-      let lastPoint = 0
+      let lastPoint = null
       let lastDate = 0
       let lastDateUnix = 0
 
       stats.forEach((stat) => {
         const date = Math.ceil(Math.round(stat.date.getTime() / 1000) / Math.round(stats.length / 200))
 
-        if (lastDate !== date && lastPoint !== 0) {
+        if (lastDate !== date && lastPoint !== null) {
           datapoints.push([
             lastPoint,
             lastDateUnix
@@ -35,7 +35,7 @@ module.exports = async (ctx) => {
           lastDateUnix = 0
         } else {
           if (lastDateUnix === 0) lastDateUnix = stat.date.getTime()
-          if (lastPoint) lastPoint = (lastPoint + stat[target.target]) / 2
+          if (lastPoint !== null) lastPoint = (lastPoint + stat[target.target]) / 2
           else lastPoint = stat[target.target]
         }
       })
